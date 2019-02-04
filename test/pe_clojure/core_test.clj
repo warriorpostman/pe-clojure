@@ -41,43 +41,25 @@
 ;
 
 
+; Problem 2
 (defn findEvenNumbers
   "Returns the only the even numbers in a given array"
   [numbers]
   (filter (fn [x] (= 0 (mod x 2))) numbers)
   )
 
-; Problem 2
-(defn sumEvenFibonacciSeriesElements
-  "Add even numbers in Fibonacci series elements"
-  [limitValue]
-  (def total 1)
-  (def index 1)
-  (while (< index limitValue)
-    (do
-      (def nextVal (inc index))
-      ;(println "next: " nextVal)
-      (def amount (if (= 0 (mod nextVal 2)) nextVal 0))
-      ;(println "amt" amount)
-      (def total (+ amount total))
-      (def index (inc index))
-      (println "total/index" total index)
-      )
-    )
-  (print "done" total)
-  100
-  )
+(def fib-seq-seq
+  ((fn fib [a b]
+     (lazy-seq (cons a (fib b (+ a b)))))
+  1 2))
 
 
 (deftest find-even-fibonacci-sum
   (testing "Find sum of even elements in Fibonacci series up to 4 million"
-    (def limitValue 4000000)
-    (def numbers (range 0 limitValue))
-    (println "COUNTING nums")
-    (print ( count (findEvenNumbers numbers)))
-    (is (= 100 100))
-    ;   (def limitValue 100)
-;    (is (= 100 (sumEvenFibonacciSeriesElements limitValue)))
+    (def limit 4000000)
+    (def evenNumbers (findEvenNumbers (take-while #(< % 4000000) fib-seq-seq)))
+    (def total (reduce + evenNumbers))
+    (print "TOTAL " total)
+    (is (= 4613732 total))
     )
-
   )
