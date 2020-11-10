@@ -1,6 +1,6 @@
 # pe-clojure
 
-FIXME: description
+Solve Project Euler problems using Clojure
 
 ## Installation
 
@@ -14,23 +14,14 @@ FIXME: explanation
 
 ## Options
 
-FIXME: listing of options this app accepts.
+Probably solve one problem per test fixture
+
+lein auto test name-of-test
 
 ## Examples
 
-...
 
 ### Bugs
 
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Use dangerously at your leisure
+Copyright ©Rustam? 2020
