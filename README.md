@@ -1,25 +1,16 @@
-# pe-clojure
+# Solving Project Euler with Clojure
 
-Solve Project Euler problems using Clojure
+!!!WARNING!!! 
 
-## Installation
-
-Download from http://example.com/FIXME.
+This repo contains answers to [Project Euler](https://projecteuler.net/). If you are not familiar with this site, you might want to try and answer the problems on your own first, before you start poking around in these solutions and spoiling your fun.
 
 ## Usage
 
-FIXME: explanation
+Problems are solved in unit test fixtures, where it's one problem per test fixture
 
-    $ java -jar pe-clojure-0.1.0-standalone.jar [args]
+To execute an the solution for an individual problem, run 
 
-## Options
-
-Probably solve one problem per test fixture
-
-lein auto test name-of-test
-
-## Examples
-
+`lein test :only pe-clojure.<problem-number...eg. 003>`
 
 ### Bugs
 
